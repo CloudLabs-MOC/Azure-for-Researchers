@@ -1,0 +1,17 @@
+[
+    {
+    "Name": "Hands on Labs - Explore Azure SQL Database",
+      "Language": "English",
+      "BaseURL": "https://github.com/CloudLabs-MOC/Azure-for-Researchers/tree/main/Instructions",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/Azure-for-Researchers/main/Instructions/lab-intro.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/Azure-for-Researchers/main/Instructions/01-Explore-Azure-SQL-Database.md",
+          "Order": 2
+        }
+      ]
+    }
+  ]

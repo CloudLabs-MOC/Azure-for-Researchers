@@ -1,0 +1,17 @@
+[
+    {
+    "Name": "Hands on Labs - Create a virtual network",
+      "Language": "English",
+      "BaseURL": "https://github.com/CloudLabs-MOC/Azure-for-Researchers/tree/main/Instructions",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/Azure-for-Researchers/main/Instructions/lab-intro.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/Azure-for-Researchers/main/Instructions/05-Create-a-Virtual-Network.md",
+          "Order": 2
+        }
+      ]
+    }
+  ]
