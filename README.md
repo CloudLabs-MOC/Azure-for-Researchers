@@ -1,1 +1,1 @@
-# Azure-for-Researchers-
+# Azure-for-Researchers
