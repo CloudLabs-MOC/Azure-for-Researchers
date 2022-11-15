@@ -55,7 +55,8 @@ In this exercise, you'll provision and test an Azure SQL Database resource.
     
 12.  Select  **▷ Run**  above the query to run it and view the results, which should include all columns for all rows in the  **SalesLT.Product**  table as shown here:
     
-    ![Screenshot of the Azure portal showing the query editor with query results.](../images/sql-query-results.png)
+
+        ![Screenshot of the Azure portal showing the query editor with query results.](../images/sql-query-results.png)
     
 13.  Replace the SELECT statement with the following code, and then select  **▷ Run**  to run the new query and review the results (which includes only the  **ProductID**,  **Name**,  **ListPrice**,  **ProductCategoryID**  columns):
 
@@ -96,11 +97,13 @@ In this exercise, you'll provision an Azure Database for PostgreSQL resource.
     -   **Compute + storage**: Select  **Configure server**, and then change  **vCore**  to two cores, leave the other server settings as they are, and select  **OK**.
     -   **Admin username**: Your name
     -   **Password**  and  **Confirm password**: A suitably complex password
+
 4.  Select  **Review + Create**, and then select  **Create**  to create your Azure PostgreSQL database.
     
 5.  Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
     
     ![Screenshot of the Azure portal showing the Azure Database for PostgreSQL page.](../images/postgresql-portal.png)
+    
     
 6.  Review the options for managing your Azure Database for PostreSQL resource.
 
