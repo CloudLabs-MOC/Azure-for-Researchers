@@ -9,10 +9,12 @@ In this walkthrough, you'll provision an Azure SQL Database resource in your Azu
 In this exercise, you'll provision and test an Azure SQL Database resource.
 
 1.  In the Azure portal, select  **＋ Create a resource**  from the upper left-hand corner and search for  _Azure SQL_. Then in the resulting  **Azure SQL**  page, select  **Create**.
+
     
 2.  Review the Azure SQL options that are available, and then in the  **SQL databases**  tile, ensure  **Single database**  is selected and select  **Create**.
     
     ![Screenshot of the Azure portal showing the Azure SQL page.](../images/azure-sql-portal.png)
+
     
 3.  Enter the following values on the  **Create SQL Database**  page:
     
@@ -23,7 +25,9 @@ In this exercise, you'll provision and test an Azure SQL Database resource.
     -   **Want to use SQL elastic pool?**:  _No_
     -   **Compute + storage**: Leave unchanged
     -   **Backup storage redundancy**:  _Locally-redundant backup storage_
+
 4.  On the  **Create SQL Database**  page, select  **Next :Networking >**, and on the  **Networking**  page, in the  **Network connectivity**  section, select  **Public endpoint**. Then select  **Yes**  for both options in the  **Firewall rules**  section to allow access to your database server from Azure services and your current client IP address.
+
     
 5.  Select  **Next: Security >**  and set the  **Enable Microsoft Defender for SQL**  option to  **Not now**.
     
@@ -47,25 +51,25 @@ In this exercise, you'll provision and test an Azure SQL Database resource.
     
 11.  In the  **Query 1**  pane, enter the following SQL code:
 
-    SELECT * FROM SalesLT.Product;
+        SELECT * FROM SalesLT.Product;
     
 12.  Select  **▷ Run**  above the query to run it and view the results, which should include all columns for all rows in the  **SalesLT.Product**  table as shown here:
     
-![Screenshot of the Azure portal showing the query editor with query results.](../images/sql-query-results.png)
+    ![Screenshot of the Azure portal showing the query editor with query results.](../images/sql-query-results.png)
     
 13.  Replace the SELECT statement with the following code, and then select  **▷ Run**  to run the new query and review the results (which includes only the  **ProductID**,  **Name**,  **ListPrice**,  **ProductCategoryID**  columns):
 
-    SELECT ProductID, Name, ListPrice, ProductCategoryID
-    FROM SalesLT.Product;
+        SELECT ProductID, Name, ListPrice, ProductCategoryID
+        FROM SalesLT.Product;
 
     
 14.  Now try the following query, which uses a JOIN to get the category name from the  **SalesLT.ProductCategory**  table:
 
-    SELECT p.ProductID, p.Name AS ProductName,
-           c.Name AS Category, p.ListPrice
-    FROM SalesLT.Product AS p
-    JOIN [SalesLT].[ProductCategory] AS c
-        ON p.ProductCategoryID = c.ProductCategoryID;
+        SELECT p.ProductID, p.Name AS ProductName,
+            c.Name AS Category, p.ListPrice
+        FROM SalesLT.Product AS p
+        JOIN [SalesLT].[ProductCategory] AS c
+            ON p.ProductCategoryID = c.ProductCategoryID;
 
     
 15.  Close the query editor pane, discarding your edits.
