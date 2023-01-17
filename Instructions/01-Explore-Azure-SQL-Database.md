@@ -1,138 +1,176 @@
-# 01 - Explore Azure SQL Database
+# Provision Azure relational database services
 
-In this walkthrough, you'll provision an Azure SQL Database resource in your Azure subscription, and then use SQL to query the tables in a relational database. 
+As part of your role at Contoso as a data engineer, you've been asked to create and configure SQL Server, PostgreSQL, and MySQL servers for Azure.
 
-## Exercise 1: Provision Azure relational database services
+## Task 1: Create your Azure SQL Database service
 
-### Task 1: Provision an Azure SQL Database resource
+In this task you'll set up your Azure SQL Database instance, which includes creating your server.
 
-In this exercise, you'll provision and test an Azure SQL Database resource.
+Over time if you realize you need additional compute power to keep up with demand, you can adjust performance options or even switch between the DTU and vCore performance models.
 
-1.  In the Azure portal, select  **＋ Create a resource**  from the upper left-hand corner and search for  _Azure SQL_. Then in the resulting  **Azure SQL**  page, select  **Create**.
+1.  Open **Edge Browser** and log in to the **Azure portal**. When prompted, use the credentials provided within the **Environment Details** tab of the lab guide.
 
+    ![Environment details](../images/environment-details.png "Environment details")
     
-2.  Review the Azure SQL options that are available, and then in the  **SQL databases**  tile, ensure  **Single database**  is selected and select  **Create**.
-    
-    ![Screenshot of the Azure portal showing the Azure SQL page.](../images/azure-sql-portal.png)
+    >**NOTE**- The DeploymentID can be obtained from the Lab Environment output page.
 
-    
-3.  Enter the following values on the  **Create SQL Database**  page:
-    
-    -   **Subscription**: Select your Azure subscription.
-    -   **Resource group**: Select **Azure-Researcher-[DeploymentID]** (use existing)
-    -   **Database name**:  _AdventureWorks_
-    -   **Server**: Select  **Create new**  and create a new server with a unique name in any available location. Use  **SQL authentication**  and specify your name as the server admin login and a suitably complex password (remember the password - you'll need it later!)
-    -   **Want to use SQL elastic pool?**:  _No_
-    -   **Compute + storage**: Leave unchanged
-    -   **Backup storage redundancy**:  _Locally-redundant backup storage_
+2.  In the portal, select **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
 
-4.  On the  **Create SQL Database**  page, select  **Next :Networking >**, and on the  **Networking**  page, in the  **Network connectivity**  section, select  **Public endpoint**. Then select  **Yes**  for both options in the  **Firewall rules**  section to allow access to your database server from Azure services and your current client IP address.
+    ![create sql database](../images/upd-create-sql-database.png "create sql database")
 
-    
-5.  Select  **Next: Security >**  and set the  **Enable Microsoft Defender for SQL**  option to  **Not now**.
-    
-6.  Select  **Next: Additional Settings >**  and on the  **Additional settings**  tab, set the  **Use existing data**  option to  **Sample**  (this will create a sample database that you can explore later).
-    
-7.  Select  **Review + Create**, and then select  **Create**  to create your Azure SQL database.
-    
-8.  Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
-    
-    ![Screenshot of the Azure portal showing the SQL Database page.](../images/sql-database-portal.png)
-    
-9.  In the pane on the left side of the page, select  **Query editor (preview)**, and then sign in using the administrator login and password you specified for your server.
-    
-    _If an error message stating that the client IP address isn't allowed is displayed, select the  **Allowlist IP ...**  link at the end of the message to allow access and try to sign in again (you previously added you own computer's client IP address to the firewall rules, but the query editor may connect from a different address depending on your network configuration.)_
-    
-    The query editor looks like this:
-    
-    ![Screenshot of the Azure portal showing the query editor.](../images/query-editor.png)
-    
-10.  Expand the  **Tables**  folder to see the tables in the database.
-    
-11.  In the  **Query 1**  pane, enter the following SQL code:
+3.  Enter the following values into the form:
 
-        SELECT * FROM SalesLT.Product;
-    
-12.  Select  **▷ Run**  above the query to run it and view the results, which should include all columns for all rows in the  **SalesLT.Product**  table as shown here:
-    
+    | Setting | Value  |
+    | --- | --- |
+    | Subscription | **Default Subscription** |
+    | Resource group | **Azure-Researcher-[DeploymentID]** (use existing) |
+    | Database name | **ContosoDID**, where **DID** is the DeploymentID can be obtained from the Lab Environment output page. |
+    | Want to use SQL elastic pool? | **No** |
 
-        ![Screenshot of the Azure portal showing the query editor with query results.](../images/sql-query-results.png)
-    
-13.  Replace the SELECT statement with the following code, and then select  **▷ Run**  to run the new query and review the results (which includes only the  **ProductID**,  **Name**,  **ListPrice**,  **ProductCategoryID**  columns):
+4.  Under Server, select **Create new**, fill out the Create SQL Database Server form with the following values, and then select **OK**:
 
-        SELECT ProductID, Name, ListPrice, ProductCategoryID
-        FROM SalesLT.Product;
+    | Setting | Value  |
+    | --- | --- |
+    | Server name | **sqlDID**, where **DID** is the DeploymentID can be obtained from the Lab Environment output page.|
+    | Authentication method | click on **Use SQL authentication** |
+    | Server admin login | **azureadmin** |
+    | Password | **Pa55w.rd** |
+    | Confirm password | **Pa55w.rd** |
+    | Location | **Select the default location** |
 
+    ![create sql database](../images/upd-sql-database-create.png "Creating SQl database")
     
-14.  Now try the following query, which uses a JOIN to get the category name from the  **SalesLT.ProductCategory**  table:
+    ![new server](../images/upd-sql-new-server-create.png "new server")
 
-        SELECT p.ProductID, p.Name AS ProductName,
-            c.Name AS Category, p.ListPrice
-        FROM SalesLT.Product AS p
-        JOIN [SalesLT].[ProductCategory] AS c
-            ON p.ProductCategoryID = c.ProductCategoryID;
+5.  Under **Compute + storage**, select **Configure database**.
 
-    
-15.  Close the query editor pane, discarding your edits.
+6.  On the Configure page, leave vCores set to **2**, change Data max size to **50 GB**, and then select **Apply**.
 
+    ![Configure](../images/upd-configure.png "Configure")
 
-## Exercise 2: Provision an Azure Database for PostgreSQL resource
+7.  Back on the Create SQL Database page, select **Additional settings** tab from top header.
 
-In this exercise, you'll provision an Azure Database for PostgreSQL resource.
+8.  Use these values to fill out the form.
 
-1.  In the Azure portal, select  **＋ Create a resource**  from the upper left-hand corner and search for  _Azure Database for PostgreSQL_. Then in the resulting  **Azure Database for PostgreSQL**  page, select  **Create**.
-    
-2.  Review the Azure Database for PostgreSQL options that are available, and then in the  **Single server**  tile, select  **Create**, and decline the offer to switch to a Flexible server if prompted.
-    
-    ![Screenshot of Azure Database for PostgreSQL deployment options](../images/postgresql-options.png)
-    
-3.  Enter the following values on the  **Create SQL Database**  page:
-    
-    -   **Subscription**: If you're using a  _sandbox_, select  _Concierge Subscription_. Otherwise, select your Azure subscription.
-    -   **Resource group**: Select **Azure-Researcher-[DeploymentID]** (use existing)
-    -   **Server name**: Enter a unique name
-    -   **Data source**: None
-    -   **Location**: Any available location
-    -   **Version**: Leave unchanged
-    -   **Compute + storage**: Select  **Configure server**, and then change  **vCore**  to two cores, leave the other server settings as they are, and select  **OK**.
-    -   **Admin username**: Your name
-    -   **Password**  and  **Confirm password**: A suitably complex password
+    | Setting | Value  |
+    | --- | --- |
+    | Use existing data | **None** |
+    | Database Collation | **SQL_Latin1_General_CP1_CI_AS** |
+    | Maintenance window | **Default** |
 
-4.  Select  **Review + Create**, and then select  **Create**  to create your Azure PostgreSQL database.
-    
-5.  Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
-    
-    ![Screenshot of the Azure portal showing the Azure Database for PostgreSQL page.](../images/postgresql-portal.png)
-    
-    
-6.  Review the options for managing your Azure Database for PostreSQL resource.
+    ![new server](../images/upd-sql-database-additionalsetting.png "additional")
 
+9.  Select **Review + Create**, and then select **Create** to create your Azure SQL database.  
 
-## Exercise 3: Provision an Azure Database for MySQL resource 
+## Task 2: Create your Azure Database for PostgreSQL service
 
-In this exercise, you'll provision an Azure Database for MySQL resource.
+In this exercise, you'll set up Azure Database for PostgreSQL
 
-1.  In the Azure portal, select  **＋ Create a resource**  from the upper left-hand corner and search for  _Azure Database for MySQL_. Then in the resulting  **Azure Database for MySQL**  page, select  **Create**.
+1.  On the Azure portal, select **Create a resource** from the upper left-hand corner.
+
+2.  Select **Databases**, then select **Azure Database for PostgreSQL**.
+
+    ![create postgre database](../images/upd-create-postgresql-database.png "create postgre database")
+
+3.  On **Select Azure Database for PostgreSQL deployment option** page, Select **Single Server** from the drop-down menu and then click on **Create**.
+
+    ![select postgre service](../images/upd-postgresql-service-select.png "select postgre service")
     
-2.  Review the Azure Database for MySQL options that are available, and then in the  **Single server**  tile, select  **Create**.
+4. If prompted with pop-up of **Consider creating flexible server**, Select **No - Create single server**.
+
+5.  Use these values to start filling out the form.
+
+    | Setting | Value  |
+    | --- | --- |
+    | Subscription | **Default Subscription** |
+    | Resource group | **Azure-Researcher-[DeploymentID]** (use existing) |
     
-    ![Screenshot of Azure Database for MySQL deployment options](../images/mysql-options.png)
+6.  Under Server details, use these values:
+
+    | Setting | Value  |
+    | --- | --- |
+    | Server name | Enter **postgresqlDID**, where **DID** is the DeploymentID can be obtained from the Lab Environment output page.|
+    | Data source | **None** |
+    | Location | **Select the default location** |
+    | Version | **Keep default setting** |
+
+    ![](../images/upd-image-100.png)
+
+7.  Under **Compute + storage**, select **Configure server**.
+
+    ![](../images/upd-compute.png)
+ 
+8.  Change **vCore** to **two cores**, increase the **storage** to **160 GB**, set the Backup Retention Period to **14 days**, and then select **OK**.
     
-3.  Enter the following values on the  **Create SQL Database**  page:
+    ![select postgre service](../images/postgresql-configure.png "postgre configure")
+
+9.  Back on the Single server page, under Administrator account, specify these values:
+
+    | Setting | Value  |
+    | --- | --- |
+    | Admin username | **azureadmin** |
+    | Password | **Pa55w.rd** |
+    | Confirm password | **Pa55w.rd** |
     
-    -   **Subscription**: If you're using a  _sandbox_, select  _Concierge Subscription_. Otherwise, select your Azure subscription.
-    -   **Resource group**:  Select **Azure-Researcher-[DeploymentID]** (use existing)
-    -   **Server name**: Enter a unique name
-    -   **Data source**: None
-    -   **Location**: Any available location
-    -   **Version**: Leave unchanged
-    -   **Compute + storage**: Select  **Configure server**, and then change  **vCore**  to two cores, leave the other server settings as they are, and select  **OK**.
-    -   **Admin username**: Your name
-    -   **Password**  and  **Confirm password**: A suitably complex password
-4.  Select  **Review + Create**, and then select  **Create**  to create your Azure MySQL database.
     
-5.  Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+    ![admin](../images/upd-adminacc.png "admin")
+
+10.  Select **Review + Create**, and then select **Create** to create your Azure PostgreSQL database.
+
+## Task 3: Create your Azure Database for MySQL service 
+
+In this exercise you'll set up Azure Database for MySQL
+
+1.  On the Azure portal, select **Create a resource** from the upper left-hand corner.
+
+2.  Select **Databases**, then select **Azure Database for MySQL**.
+
+    ![azure database for sql](../images/upd-create-azure-database-forsql.png "azure database for sql")
+
+3. On **Select Azure Database for MySQL deployment option** page, click on **Create** under **Flexible Server**.
+
+    ![azure database for sql](../images/upd-t3-s3.png "azure database for sql")
+
+4.  Use these values to fill out the first section of the form.
+
+    | Setting | Value  |
+    | --- | --- |
+    | Subscription | **Default Subscription** |
+    | Resource group | **Azure-Researcher-[DeploymentID]** (use existing) |
+
+5.  Under Server details, use these values:
+
+    | Setting | Value  |
+    | --- | --- |
+    | Server name | Enter **mysqlDID**, where **DID** is the DeploymentID can be obtained from the Lab Environment output page. |
+    | Region | **Select the default location** |
+    | MySQL version | **Keep default setting** |
     
-    ![Screenshot of the Azure portal showing the Azure Database for MySQL page.](../images/mysql-portal.png)
     
-6.  Review the options for managing your Azure Database for MySQL resource.
+    ![azure database for sql](../images/upd-t3-s5.png "azure database for sql")
+
+6.  Under **Compute + storage**, select **Configure server**.
+
+    ![mysql create](../images/upd-t3-s6.png "mysql create")
+
+7.  On the Compute + storage page, select **Compute tier** as **General Purpose (2-64 vCores)**, reduce **Storage size** to **64 GB**, reduce **IOPS** to **492**, change Backup Retention Period to **14 days**, and then select **Save**.
+
+    ![configure azure database](../images/upd-t3-s7.png "configure azure database") 
+
+8.  Back on the Flexible server page, under Authentication, use these values:
+
+    | Setting | Value  |
+    | --- | --- |
+    | Admin username | **azureadmin** |
+    | Password | **Pa55w.rd** |
+    | Confirm password | **Pa55w.rd** |
+    
+    
+    ![admin](../images/upd-t3-s8.png "admin")
+
+9.  Select **Review + Create**, and then select **Create** to create your Azure MySQL database.
+
+    > **Note:** If prompted with **Configure IP address in firewall rules** pop-up, click on **Create server without firewall rules**.
+
+## Congratulation, you have completed this lab.
+------------
