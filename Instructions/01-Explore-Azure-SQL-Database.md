@@ -10,13 +10,13 @@ Over time if you realize you need additional compute power to keep up with deman
 
 1.  Open **Edge Browser** and log in to the **Azure portal**. When prompted, use the credentials provided within the **Environment Details** tab of the lab guide.
 
-    ![Environment details](media/environment-details.png "Environment details")
+    ![Environment details](../images/environment-details.png "Environment details")
     
     >**NOTE**- The DeploymentID can be obtained from the Lab Environment output page.
 
 2.  In the portal, select **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
 
-    ![create sql database](media/upd-create-sql-database.png "create sql database")
+    ![create sql database](../images/upd-create-sql-database.png "create sql database")
 
 3.  Enter the following values into the form:
 
@@ -38,15 +38,15 @@ Over time if you realize you need additional compute power to keep up with deman
     | Confirm password | **Pa55w.rd** |
     | Location | **Select the default location** |
 
-    ![create sql database](media/upd-sql-database-create.png "Creating SQl database")
+    ![create sql database](../images/upd-sql-database-create.png "Creating SQl database")
     
-    ![new server](media/upd-sql-new-server-create.png "new server")
+    ![new server](../images/upd-sql-new-server-create.png "new server")
 
 5.  Under **Compute + storage**, select **Configure database**.
 
 6.  On the Configure page, leave vCores set to **2**, change Data max size to **50 GB**, and then select **Apply**.
 
-    ![Configure](media/upd-configure.png "Configure")
+    ![Configure](../images/upd-configure.png "Configure")
 
 7.  Back on the Create SQL Database page, select **Additional settings** tab from top header.
 
@@ -58,7 +58,7 @@ Over time if you realize you need additional compute power to keep up with deman
     | Database Collation | **SQL_Latin1_General_CP1_CI_AS** |
     | Maintenance window | **Default** |
 
-    ![new server](media/upd-sql-database-additionalsetting.png "additional")
+    ![new server](../images/upd-sql-database-additionalsetting.png "additional")
 
 9.  Select **Review + Create**, and then select **Create** to create your Azure SQL database.  
 
@@ -70,11 +70,11 @@ In this exercise, you'll set up Azure Database for PostgreSQL
 
 2.  Select **Databases**, then select **Azure Database for PostgreSQL**.
 
-    ![create postgre database](media/upd-create-postgresql-database.png "create postgre database")
+    ![create postgre database](../images/upd-create-postgresql-database.png "create postgre database")
 
 3.  On **Select Azure Database for PostgreSQL deployment option** page, Select **Single Server** from the drop-down menu and then click on **Create**.
 
-    ![select postgre service](media/upd-postgresql-service-select.png "select postgre service")
+    ![select postgre service](../images/upd-postgresql-service-select.png "select postgre service")
     
 4. If prompted with pop-up of **Consider creating flexible server**, Select **No - Create single server**.
 
@@ -94,15 +94,15 @@ In this exercise, you'll set up Azure Database for PostgreSQL
     | Location | **Select the default location** |
     | Version | **Keep default setting** |
 
-    ![](media/upd-image-100.png)
+    ![](../images/upd-image-100.png)
 
 7.  Under **Compute + storage**, select **Configure server**.
 
-    ![](media/upd-compute.png)
+    ![](../images/upd-compute.png)
  
 8.  Change **vCore** to **two cores**, increase the **storage** to **160 GB**, set the Backup Retention Period to **14 days**, and then select **OK**.
     
-    ![select postgre service](media/postgresql-configure.png "postgre configure")
+    ![select postgre service](../images/postgresql-configure.png "postgre configure")
 
 9.  Back on the Single server page, under Administrator account, specify these values:
 
@@ -113,7 +113,7 @@ In this exercise, you'll set up Azure Database for PostgreSQL
     | Confirm password | **Pa55w.rd** |
     
     
-    ![admin](media/upd-adminacc.png "admin")
+    ![admin](../images/upd-adminacc.png "admin")
 
 10.  Select **Review + Create**, and then select **Create** to create your Azure PostgreSQL database.
 
@@ -125,11 +125,11 @@ In this exercise you'll set up Azure Database for MySQL
 
 2.  Select **Databases**, then select **Azure Database for MySQL**.
 
-    ![azure database for sql](media/upd-create-azure-database-forsql.png "azure database for sql")
+    ![azure database for sql](../images/upd-create-azure-database-forsql.png "azure database for sql")
 
 3. On **Select Azure Database for MySQL deployment option** page, click on **Create** under **Flexible Server**.
 
-    ![azure database for sql](media/upd-t3-s3.png "azure database for sql")
+    ![azure database for sql](../images/upd-t3-s3.png "azure database for sql")
 
 4.  Use these values to fill out the first section of the form.
 
@@ -147,15 +147,15 @@ In this exercise you'll set up Azure Database for MySQL
     | MySQL version | **Keep default setting** |
     
     
-    ![azure database for sql](media/upd-t3-s5.png "azure database for sql")
+    ![azure database for sql](../images/upd-t3-s5.png "azure database for sql")
 
 6.  Under **Compute + storage**, select **Configure server**.
 
-    ![mysql create](media/upd-t3-s6.png "mysql create")
+    ![mysql create](../images/upd-t3-s6.png "mysql create")
 
 7.  On the Compute + storage page, select **Compute tier** as **General Purpose (2-64 vCores)**, reduce **Storage size** to **64 GB**, reduce **IOPS** to **492**, change Backup Retention Period to **14 days**, and then select **Save**.
 
-    ![configure azure database](media/upd-t3-s7.png "configure azure database") 
+    ![configure azure database](../images/upd-t3-s7.png "configure azure database") 
 
 8.  Back on the Flexible server page, under Authentication, use these values:
 
@@ -166,7 +166,7 @@ In this exercise you'll set up Azure Database for MySQL
     | Confirm password | **Pa55w.rd** |
     
     
-    ![admin](media/upd-t3-s8.png "admin")
+    ![admin](../images/upd-t3-s8.png "admin")
 
 9.  Select **Review + Create**, and then select **Create** to create your Azure MySQL database.
 
