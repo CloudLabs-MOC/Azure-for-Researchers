@@ -14,7 +14,7 @@ Over time if you realize you need additional compute power to keep up with deman
     
     >**NOTE**- The DeploymentID can be obtained from the Lab Environment output page.
 
-2.  In the portal, select **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
+2.  In the portal, select **Create a resource** from the upper left-hand corner. Select **SQL Database**, then select **SQL Database**.
 
     ![create sql database](../images/upd-create-sql-database.png "create sql database")
 
