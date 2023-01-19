@@ -14,7 +14,7 @@ Over time if you realize you need additional compute power to keep up with deman
     
     >**NOTE**- The DeploymentID can be obtained from the Lab Environment output page.
 
-2.  In the portal, select **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
+2.  In the portal, select **Create a resource** from the upper left-hand corner. Search and select **SQL Database**.
 
     ![create sql database](../images/upd-create-sql-database.png "create sql database")
 
@@ -68,7 +68,7 @@ In this exercise, you'll set up Azure Database for PostgreSQL
 
 1.  On the Azure portal, select **Create a resource** from the upper left-hand corner.
 
-2.  Select **Databases**, then select **Azure Database for PostgreSQL**.
+2.  Search and select **Azure Database for PostgreSQL**.
 
     ![create postgre database](../images/upd-create-postgresql-database.png "create postgre database")
 
@@ -123,7 +123,7 @@ In this exercise you'll set up Azure Database for MySQL
 
 1.  On the Azure portal, select **Create a resource** from the upper left-hand corner.
 
-2.  Select **Databases**, then select **Azure Database for MySQL**.
+2.  Search and select **Azure Database for MySQL**.
 
     ![azure database for sql](../images/upd-create-azure-database-forsql.png "azure database for sql")
 
