@@ -26,7 +26,7 @@ In this task, we will create a virtual network.
 
     **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
-   ![Screenshot of the "Basic" step of Create virtual network blade with the default fields.](../images/0301a.png)
+   ![Screenshot of the "Basic" step of Create virtual network blade with the default fields.](../images/301a.png)
    ![Screenshot of the "IP Addresses" step of Create virtual network blade with the default fields.](../images/0301b.png)
 
 4. Click the **Review + create** button. Ensure the validation passes.
