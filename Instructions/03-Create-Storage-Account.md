@@ -22,7 +22,7 @@ In this task, we will create a new storage account.
     | Redundancy | **Locally redundant storage (LRS)** |
 
 
-5. Click **Review + Create** to review your storage account settings and allow Azure to validate the configuration. 
+5. Click **Review** to review your storage account settings and allow Azure to validate the configuration. 
 
 6. Once validated, click **Create**. Wait for the notification that the account was successfully created. 
 
