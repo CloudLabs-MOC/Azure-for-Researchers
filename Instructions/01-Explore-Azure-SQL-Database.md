@@ -151,7 +151,7 @@ In this exercise you'll set up Azure Database for MySQL
 
 6.  Under **Compute + storage**, select **Configure server**.
 
-    ![mysql create](../images/upd-t3-s6.png "mysql create")
+    ![mysql create](../images/upd-t3-S6.png "mysql create")
 
 7.  On the Compute + storage page, select **Compute tier** as **General Purpose (2-64 vCores)**, reduce **Storage size** to **64 GB**, reduce **IOPS** to **492**, change Backup Retention Period to **14 days**, and then select **Save**.
 
