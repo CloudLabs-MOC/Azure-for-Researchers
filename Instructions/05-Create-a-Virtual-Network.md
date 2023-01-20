@@ -14,24 +14,35 @@ In this task, we will create a virtual network.
 
 3. On the **Create virtual network** blade, fill in the following (leave the defaults for everything else):
 
+4. On the **Basics** blade, fill in the following
     | Setting | Value | 
     | --- | --- |
+    | Subscription | **Choose your subscription**  |
+    | Resource group |  **Azure-Researcher-[DeploymentID]** (use existing) |
     | Name | **vnet1** |
-    | Address space |**10.1.0.0/16** |
-   | Subscription | **Choose your subscription**  |
-   | Resource group |  **Azure-Researcher-[DeploymentID]** (use existing) |
     | Location | **(US) East US** |
+    
+    ![Screenshot of the "Basic" step of Create virtual network blade with the default fields.](../images/301a.png)
+    
+ 5. Click **Next : IP Addresses** blade, fill in the following   
+    | Setting | Value | 
+    | --- | --- |  
+    | Address space |**10.1.0.0/16** |
+  
+ 6. Click **Add Subnet**, this will launch a blade on right side, fill in the following and click on add (leave the defaults for everything else):
+    
+    | Setting | Value | 
+    | --- | --- |  
     | Subnet - Name | **default** |
     | Subnet Address range | **10.1.0.0/24** |
 
     **Note**: Deployment ID can be obtained from the Lab Environment output page.
-
-   ![Screenshot of the "Basic" step of Create virtual network blade with the default fields.](../images/301a.png)
+   
    ![Screenshot of the "IP Addresses" step of Create virtual network blade with the default fields.](../images/0301b.png)
 
-4. Click the **Review + create** button. Ensure the validation passes.
+7. Click the **Review + create** button. Ensure the validation passes.
 
-5. Click the **Create** button to deploy the virtual network. 
+8. Click the **Create** button to deploy the virtual network. 
 
     **Note**: In your organization, how will you know which virtual networks and IP addressing you will need?
 

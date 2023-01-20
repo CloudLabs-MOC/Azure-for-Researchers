@@ -5,7 +5,7 @@
       "BaseURL": "https://github.com/CloudLabs-MOC/Azure-for-Researchers/tree/main/Instructions",
       "Files": [
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/Azure-for-Researchers/main/Instructions/lab-intro.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/Azure-for-Researchers/main/Instructions/Intro-for-No-Jump-VM.md",
           "Order": 1
         },
         {
